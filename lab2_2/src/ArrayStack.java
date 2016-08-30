@@ -36,8 +36,8 @@ public class ArrayStack {
 
     public int size()
     {
-
-        return top+1;
+        int sizeArr = top+1;
+        return sizeArr;
     }
 
     public static void main(String[] args) {
