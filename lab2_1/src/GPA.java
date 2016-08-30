@@ -1,15 +1,25 @@
 /**
  * Implement grading system.
  */
+import java.util.Scanner;
+
 public class GPA {
+    float sumgrade=0, sumcredit=0; //declare sumgrade and sumcredit to collect grade and credit
     public void addGrade(int credit, float grade) {
-        /* Your code here */
+        sumgrade = sumgrade+(grade*credit); //grade equal grade times credit then contain in sumgrade
+        sumcredit = sumcredit+credit; //contain sum of credit in sumcredit
     }
 
 
     public float get() {
-        /* Your code here */
-        return 0.0f;
+        float gpa;
+        if(sumcredit==0) { //if credit or divider is 0 return 0
+            return 0;
+        }
+        else {
+            gpa = sumgrade / sumcredit; //gpa = sum of grades divided by sum of credits
+            return gpa;
+        }
     }
     public static void main(String[] args) {
         GPA gpa = new GPA();
