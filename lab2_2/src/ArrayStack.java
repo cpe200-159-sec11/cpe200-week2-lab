@@ -6,6 +6,7 @@ public class ArrayStack {
     protected Object[] storage;
     protected int top;
 
+
     public ArrayStack()
     {
         this(DEFAULT_STORAGE_SIZE);
@@ -16,11 +17,14 @@ public class ArrayStack {
         if(size <= 0) return;
         storage = new Object[size];
         top = -1;
+
     }
 
     public void push(Object o)
     {
-        /* Your code here */
+       storage[top+1] = o;
+        top++;
+
     }
 
     public Object pop()
@@ -32,8 +36,8 @@ public class ArrayStack {
 
     public int size()
     {
-        /* Your code here */
-        return 0;
+
+        return top+1;
     }
 
     public static void main(String[] args) {
