@@ -4,19 +4,27 @@
 public class GPA {
     public void addGrade(int credit, float grade) {
         /* Your code here */
+        sumgrade = (grade*credit)+ sumgrade;
+        sumcredit = credit + sumcredit;
     }
+    private float sumgrade=0;
+    private int sumcredit =0;
+    public float gpa=0;
 
 
     public float get() {
         /* Your code here */
-        return 0.0f;
+        if(sumgrade > 0) {
+            gpa = sumgrade / sumcredit;
+
+            return gpa;
+        }
+        else return  0;
     }
     public static void main(String[] args) {
         GPA gpa = new GPA();
         System.out.println("Add data");
-        gpa.addGrade(3, 4);     // Got A for 3 credits class
-        gpa.addGrade(3, 3.5f);   // Got B+ for 3 credits class
-        gpa.addGrade(2, 2);     // Got C for a 2 credits class
-        System.out.printf("My GPS is %f\n", gpa.get());
+
+        System.out.printf("My GPS is %.2f\n", gpa.get());
     }
 }
