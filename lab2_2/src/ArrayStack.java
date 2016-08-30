@@ -20,7 +20,8 @@ public class ArrayStack {
 
     public void push(Object o)
     {
-        /* Your code here */
+        top++;
+        storage[top] = o;   //increse index then store 'o' in storage[] index top
     }
 
     public Object pop()
@@ -32,8 +33,7 @@ public class ArrayStack {
 
     public int size()
     {
-        /* Your code here */
-        return 0;
+        return top+1; //return top+1 (that size of index)
     }
 
     public static void main(String[] args) {
