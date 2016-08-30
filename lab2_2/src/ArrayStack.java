@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * Implement all the methods for ArrayStack.
  */
@@ -20,7 +22,8 @@ public class ArrayStack {
 
     public void push(Object o)
     {
-        /* Your code here */
+        top++;
+        storage[top]=o;
     }
 
     public Object pop()
@@ -32,8 +35,7 @@ public class ArrayStack {
 
     public int size()
     {
-        /* Your code here */
-        return 0;
+        return top+1;
     }
 
     public static void main(String[] args) {
