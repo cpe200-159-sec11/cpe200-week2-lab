@@ -6,34 +6,33 @@ public class ArrayStack {
     protected Object[] storage;
     protected int top;
 
-    public ArrayStack()
-    {
+    public ArrayStack() {
         this(DEFAULT_STORAGE_SIZE);
     }
 
-    public ArrayStack(int size)
-    {
-        if(size <= 0) return;
+    public ArrayStack(int size){
+        if(size <= 0){
+            return;
+        }
         storage = new Object[size];
         top = -1;
     }
 
-    public void push(Object o)
-    {
-        /* Your code here */
+    public void push(Object o){
+        top++;
+        storage[top]=o;
     }
 
-    public Object pop()
-    {
-        if(top == -1) throw new RuntimeException("Stack underflow");
+    public Object pop() {
+        if(top == -1){
+            throw new RuntimeException("Stack underflow");
+        }
         top--;
         return storage[top + 1];
     }
 
-    public int size()
-    {
-        /* Your code here */
-        return 0;
+    public int size() {
+        return top+1;
     }
 
     public static void main(String[] args) {
@@ -52,7 +51,8 @@ public class ArrayStack {
         System.out.printf("Third pop: %d\n", (Integer)stack.pop());
         try {
             System.out.printf("Fourth pop: %d\n", (Integer)stack.pop());
-        } catch (Exception ex) {
+        }
+        catch (Exception ex) {
             System.out.printf("Got exception: %s\n", ex.getMessage());
         }
 
