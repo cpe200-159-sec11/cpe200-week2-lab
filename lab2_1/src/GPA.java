@@ -3,13 +3,19 @@
  */
 public class GPA {
     public void addGrade(int credit, float grade) {
-        /* Your code here */
+        sum=credit*grade;
+        gpa=gpa+sum;
+        count=count+credit;
     }
 
-
     public float get() {
-        /* Your code here */
-        return 0.0f;
+        if(sum==0){
+            gpa=0;
+        }
+        else{
+            gpa=gpa/count;
+        }
+        return gpa;
     }
     public static void main(String[] args) {
         GPA gpa = new GPA();
@@ -19,4 +25,8 @@ public class GPA {
         gpa.addGrade(2, 2);     // Got C for a 2 credits class
         System.out.printf("My GPS is %f\n", gpa.get());
     }
+    private
+        float gpa=0;
+        float sum=0;
+        float count=0;
 }
